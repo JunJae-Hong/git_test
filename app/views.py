@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'index.html',{'x':x})
     
 def create(request):
-    return render(request, 'new.html')
+    return render(request, 'create.html')
 
 def new(request):
     x = Lol() #x는 변수 
@@ -15,7 +15,7 @@ def new(request):
     x.text = request.GET['text']
     x.category = request.GET['category']
     x.save()
-    return redirect('/' +str(x.id))
+    return redirect('/')
 
 def read(request, Lol_id):
     read = get_object_or_404(Lol, pk=Lol_id)
